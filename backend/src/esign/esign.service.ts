@@ -26,12 +26,12 @@ export class EsignService {
 // 
 
 // 
-  getApiToken(): string | undefined {
-    return 'test.6Qe8vihGNgvIB3PheOEhTG'
+ getApiToken(): string | undefined {
+    return this.configService.get<string>('API_TOKEN');
   }
 
   getBaseUrl(): string | undefined {
-    return 'https://sandbox.opensignlabs.com/api/v1/'
+    return this.configService.get<string>('API_BASE_URL');
   }
 
   async initiateWorkflow(payload: any): Promise<any> {
