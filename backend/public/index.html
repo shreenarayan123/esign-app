@@ -1,0 +1,80 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>eSign Workflow - Sequential Signing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <h1>eSign Workflow - Sequential Signing</h1>
+
+  <!-- Role 1 Section: Initiate Workflow -->
+  <div class="section" id="role1Section">
+    <h2>Role 1: Initiating Workflow</h2>
+    <input type="file" id="role1PdfFile" accept="application/pdf">
+    <!-- Preview  -->
+    <hr />
+    <div id="role1Preview"></div>
+    <br>
+    <label for="role1Name">Your Name:</label>
+    <input type="text" value="Puneet HR" id="role1Name" placeholder="Enter your name">
+    <label for="role1Email">Your Email:</label>
+    <input type="email" value="psethi@yopmail.com" id="role1Email" placeholder="Enter your email">
+
+    <!-- Widget Details -->
+    <h2>Phase 1: Add Sign Tags for Role 2 and Role 3</h2>
+    <label for="role2Name">Role 2 Name:</label>
+    <input type="text" value="" id="role2Name" placeholder="Enter Role 2 name">
+    <label for="role2Email">Role 2 Email:</label>
+    <input type="email" value="" id="role2Email" placeholder="Enter Role 2 email">
+    <br><br>
+    <button id="initiateBtn">Initiate Workflow</button>
+    <p id="initiateStatus"></p>
+
+    <!-- Hidden widget values for Role 2 -->
+    <input type="number" hidden value="35.11656207598372" id="r2-widgetX" placeholder="X coordinate" step="0.01">
+    <input type="number" hidden value="449.2039518317504" id="r2-widgetY" placeholder="Y coordinate" step="0.01">
+    <input type="number" hidden value="150" id="r2-widgetW" placeholder="Width" step="0.01">
+    <input type="number" hidden value="60" id="r2-widgetH" placeholder="Height" step="0.01">
+    <input type="number" hidden value="1" id="r2-widgetPage" min="1" placeholder="Page number">
+
+    <!-- Hidden widget values for Role 3 -->
+    <input type="number" hidden value="383.506105834464" id="r3-widgetX" placeholder="X coordinate" step="0.01">
+    <input type="number" hidden value="449.65943012211676" id="r3-widgetY" placeholder="Y coordinate" step="0.01">
+    <input type="number" hidden value="145.31886024423338" id="r3-widgetW" placeholder="Width" step="0.01">
+    <input type="number" hidden value="58.12754409769335" id="r3-widgetH" placeholder="Height" step="0.01">
+    <input type="number" hidden value="1" id="r3-widgetPage" min="1" placeholder="Page number">
+  </div>
+
+  <!-- Role 2 Section: Review and Sign -->
+  <div class="section" id="role2Section">
+    <h2>Phase 2: Role 2 Adds <i>Role 3 Email</i>, E-Sign (PDF) and Forward Role 3</h2>
+    <input type="text" hidden value="" id="templateId" placeholder="Template ID">
+    <label for="role3Name">Add Role 3 Name:</label>
+    <input type="text" hidden value="Role3" id="forRole">
+    <input type="text" value="" id="role3Name" placeholder="Enter Role 3 Name">
+    <label for="role3EmailUpdate">Add Role 3 Email:</label>
+    <input type="email" value="" id="role3Email" placeholder="Enter Role 3 Email">
+    <label for="role3EmailUpdate">Add Role 3 Phone:</label>
+    <input type="email" id="role3Phone" placeholder="Enter Role 3 Phone">
+    <br><br>
+    <button id="role2SignBtn">Submit Role 3 and Sign</button>
+    <p id="role2Status"></p>
+  </div>
+
+  <!-- Role 3 Section: Final Signing -->
+  <div class="section" id="role3Section">
+    <h2>Phase 3: Final Signing by Role 3</h2>
+    <p id="documentIdRole3">Waiting for Document to be Prepared by Role 2</p>
+    <p id="role3Status"></p>
+  </div>
+
+  <!-- Load external JavaScript -->
+  <script src="main.js"></script>
+</body>
+
+</html>
