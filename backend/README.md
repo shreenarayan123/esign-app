@@ -18,7 +18,7 @@ $ npm install
 
 ## Compile and run the project
 **Pre-requisites**: 
-- Copy/Rename the file `.env.sample` to `.env.local`
+- In `.env.local`
 - Add an `API_TOKEN` in the `.env.[your_env]` file at the bottom. For eg. if you are running on `local` environment, then  in your `.env.local`, add the value for `API_TOKEN` such as:
 ```
 API_TOKEN=YOUR_TOKEN_VALUE
