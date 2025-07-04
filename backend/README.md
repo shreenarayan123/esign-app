@@ -2,7 +2,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-# eSign Workflow - Sequential Signing
+
 ## Description
 This project demonstrates an eSign workflow built using NestJS. The application implements a sequential signing process where each role completes its task before the document advances to the next stage.
 
@@ -11,6 +11,7 @@ This project demonstrates an eSign workflow built using NestJS. The application 
 ## Project setup
 
 ```bash
+$ cd backend
 
 $ npm install
 ```
