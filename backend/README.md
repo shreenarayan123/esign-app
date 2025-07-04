@@ -11,8 +11,6 @@ This project demonstrates an eSign workflow built using NestJS. The application 
 ## Project setup
 
 ```bash
-$ git clone https://github.com/puneetsethi25/esign-nest.git
-$ cd esign-workflow
 
 $ npm install
 ```

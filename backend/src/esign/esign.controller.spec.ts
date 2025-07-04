@@ -11,14 +11,14 @@ describe('EsignController', () => {
     initiateWorkflow: jest
       .fn()
       .mockResolvedValue({ message: 'Success', objectId: '1234' }),
-    // Added mock for getTemplateById returning a template with signers array
+    // mock for getTemplateById returning a template with signers array
     getTemplateById: jest.fn().mockResolvedValue({
       signers: [
         { role: 'role3', name: '', email: '', phone: '' },
         { role: 'role2', name: 'Test Role2', email: 'dummy@yopmail.com', phone: '' },
       ],
     }),
-    // Added mock for createDocumentFromTemplateId returning a valid document result
+    // mock for createDocumentFromTemplateId returning a valid document result
     createDocumentFromTemplateId: jest.fn().mockResolvedValue({
       objectId: 'doc5678',
       signurl: [
@@ -73,8 +73,9 @@ describe('EsignController', () => {
       controller.previewFile(filename, res);
       // __dirname in the compiled code will be "dist", so we expect a string that includes "uploads/test.pdf"
       expect(res.sendFile).toHaveBeenCalledWith(
-        expect.stringContaining('uploads/test.pdf'),
-      );
+  expect.stringMatching(/uploads[\/\\]test\.pdf$/)
+);
+
     });
   });
 
@@ -96,8 +97,8 @@ describe('EsignController', () => {
     it('should return role2 signing result with non-empty strings for message, objectId, email and url', async () => {
       const payload = {
         templateId: 'uLD3vU3P4O',
-        role3Email: 'prole3@yopmail.com',
-        role3Name: 'Puneet Role3',
+        role3Email: 'shreenaryan@gmail.com',
+        role3Name: 'Shreenarayan Role3',
         role3Phone: '',
         role: 'role3',
       };
